@@ -1,13 +1,30 @@
 # Snippets App
 
 ## Running Instructions
-For django:
-	configure database @ snippets/settings.py
-	python3 manage.py migrate
-	python3 manage.py runserver
-For vuejs:
-	yarn install
-	yarn run serve
+### Configure database at
+```
+snippets/settings.py
+```
+
+### Migrate
+```
+python3 manage.py migrate
+```
+
+### Start server
+```
+python3 manage.py runserver
+```
+
+### Change directory to vue/ then execute
+```
+yarn install
+```
+
+### Run
+```
+yarn run serve
+```
 
 
 ## What Features are missing?
