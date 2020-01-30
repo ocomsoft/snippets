@@ -26,6 +26,8 @@ yarn install
 yarn run serve
 ```
 
+![Screenshot](Screenshot1.png)
+![Screenshot](Screenshot2.png)
 
 ## What Features are missing?
 * Authentication
