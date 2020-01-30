@@ -69,7 +69,7 @@ WSGI_APPLICATION = 'snippets.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres_database',
+        'NAME': 'postgres_database_2',
         'HOST': 'localhost',
         'USER': 'django',
         'PASSWORD': 'django',

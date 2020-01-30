@@ -31,6 +31,8 @@ yarn run serve
 * Authentication
 * Notifications
 * Unit tests
+* Search
+* Pagination
 
 ## What could you do better if you had more time?
-(Document here what you could improve on this code if you had more time. Which parts of the code could be better and Why?)
+* Fix lint problems
