@@ -2,7 +2,7 @@
   <div class="pt-5">
     <form @submit.prevent="update" method="post">
       <div class="form-group">
-        <label for="name">Title</label>
+        <label for="title">Title</label>
         <input
           type="text"
           class="form-control"
@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="currency">Language</label>
+        <label for="language">Language</label>
         <select
           name="language"
           class="form-control"
@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="name">Description</label>
+        <label for="description">Description</label>
         <input
           type="text"
           class="form-control"
@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="name">Code</label>
+        <label for="code">Code</label>
         <textarea
           class="form-control"
           id="code"
@@ -68,11 +68,25 @@
           Please provide a valid code.
         </div>
       </div>
+      <div class="form-group">
+        <label for="active">Active</label>
+        <select
+          name="active"
+          class="form-control"
+          v-validate="'required'"
+          id="active"
+          v-model="snippet.active"
+          :class="{ 'is-invalid': errors.has('snippet.active') && submitted }"
+        >
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        <div class="invalid-feedback">
+          Please provide a valid active status.
+        </div>
+      </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>
-      <button class="btn btn-danger" v-on:click="deleteSnippet(snippet)">
-        Delete
-      </button>
     </form>
   </div>
 </template>
