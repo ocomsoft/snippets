@@ -1,7 +1,14 @@
 # Snippets App
 
 ## Running Instructions
-(put your instructions here so I can run everything to test it out)
+For django:
+	configure database @ snippets/settings.py
+	python3 manage.py migrate
+	python3 manage.py runserver
+For vuejs:
+	yarn install
+	yarn run serve
+
 
 ## What Features are missing?
 (Document here what features you think are missing ie Authentication etc..)
