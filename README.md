@@ -27,7 +27,7 @@ yarn run serve
 ```
 
 ![Screenshot](screenshot-index.png)
-![Screenshot](acreenshot-create.png)
+![Screenshot](screenshot-create.png)
 ![Screenshot](screenshot-edit.png)
 
 ## What Features are missing?
