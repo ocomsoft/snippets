@@ -113,6 +113,7 @@ export default {
           return;
         }
         this.$store.dispatch('updateSnippet', this.snippet)
+        this.$store.dispatch('getAllSnippets')
         this.$router.push("/");
       });
     }
