@@ -20,26 +20,20 @@
 
 
 <script>
-
-import axios from 'axios';
-
 export default {
-    data() {
-        return {
-            snippets: []
+    computed: {
+        snippets() {
+            return this.$store.getters.snippets
         }
     },
-    created() {
-        this.all();
+    mounted() {
+        this.getAllSnippets()
     },
     methods: {
-        all: function () {
-            axios.get('http://127.0.0.1:8000/api/snippets/')
-                .then( response => {
-                    this.snippets = response.data
-                });
+        getAllSnippets() {
+            this.$store.dispatch('getAllSnippets')
         }
-    },
+    }
 }
 </script>
 

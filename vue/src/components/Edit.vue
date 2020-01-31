@@ -91,32 +91,19 @@
   </div>
 </template>
 <script>
-import axios from "axios";
-
 export default {
   data() {
     return {
-      subscription: {
-        name: "",
-        currency: "",
-        amount: "",
-        description: ""
-      },
-      snippet: {
-        title: "",
-        description: "",
-        language: "",
-        code: ""
-      },
       submitted: false
-    };
+    }
+  },
+  computed: {
+    snippet() {
+      return this.$store.getters.snippet
+    }
   },
   mounted() {
-    axios
-      .get("http://127.0.0.1:8000/api/snippets/" + this.$route.params.id)
-      .then(response => {
-        this.snippet = response.data;
-      });
+    this.$store.dispatch('getSnippet', this.$route.params.id)
   },
   methods: {
     update: function(e) {
@@ -125,24 +112,9 @@ export default {
         if (!result) {
           return;
         }
-        axios
-          .put(
-            `http://127.0.0.1:8000/api/snippets/${this.snippet.id}/`,
-            this.snippet
-          )
-          .then(response => {
-            this.$router.push("/");
-          });
+        this.$store.dispatch('updateSnippet', this.snippet)
+        this.$router.push("/");
       });
-    },
-    deleteSnippet: function(snippet) {
-      if (confirm("Delete " + snippet.title)) {
-        axios
-          .delete(`http://127.0.0.1:8000/api/snippets/${snippet.id}`)
-          .then(response => {
-            this.$router.push("/");
-          });
-      }
     }
   }
 };

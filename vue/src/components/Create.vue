@@ -92,8 +92,6 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
   data() {
     return {
@@ -114,12 +112,8 @@ export default {
         if (!result) {
           return;
         }
-        axios
-          .post("http://127.0.0.1:8000/api/snippets/", this.snippet)
-          .then(response => {
-            console.log(response);
-            this.$router.push("/");
-          });
+        this.$store.dispatch('createSnippet', this.snippet)
+        this.$router.push("/");
       });
     }
   }
